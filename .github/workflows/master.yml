@@ -33,10 +33,10 @@ jobs:
         run: ./mvnw clean package
 
       - name: Import GPG Owner Trust
-        run: echo ${{secrets.GPG_OWNERTRUST}} | base64 --decode | gpg --import-ownertrust
+        run: echo ${{secrets.GPG_OWNER_TRUST}} | base64 --decode | gpg --import-ownertrust
 
       - name: Import GPG key
-        run: echo ${{secrets.GPG_SECRET_KEYS}} | base64 --decode | gpg --import --no-tty --batch --yes
+        run: echo ${{secrets.GPG_SECRET_KEYS}} | base64 --decode | gpg --import --no-tty --batch --yes --always-trust
 
       - name: Clean settings.xml
         run: rm -rf ~/.m2/settings.xml
