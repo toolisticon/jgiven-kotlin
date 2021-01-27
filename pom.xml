@@ -4,7 +4,7 @@
 
   <groupId>io.toolisticon.testing</groupId>
   <artifactId>jgiven-kotlin</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>0.0.1-SNAPSHOT</version>
 
   <name>${project.artifactId}</name>
   <description>jgiven kotlin extension</description>
@@ -16,38 +16,16 @@
     <java.version>11</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <version.java>${java.version}</version.java>
-
-    <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
-
-    <jgiven.version>1.0.0-RC7</jgiven.version>
-    <kotlin.version>1.4.20</kotlin.version>
+    <kotlin.version>1.4.21</kotlin.version>
     <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
 
-    <kotlin-logging.version>2.0.2</kotlin-logging.version>
-    <mockito-kotlin.version>2.2.0</mockito-kotlin.version>
+    <jgiven.version>1.0.0-RC7</jgiven.version>
+    <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
 
-    <pattern.class.itest>**/*ITest.*</pattern.class.itest>
-    <pattern.package.itest>**/itest/**/*.*</pattern.package.itest>
-
-    <!-- Skip instrumentalization by default -->
-    <jacoco.skip>true</jacoco.skip>
-    <!-- Skip KDoc by default -->
-    <dokka.skip>true</dokka.skip>
   </properties>
 
   <dependencyManagement>
-
     <dependencies>
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>${spring-boot.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-
-      <!-- Kotlin -->
       <dependency>
         <groupId>org.jetbrains.kotlin</groupId>
         <artifactId>kotlin-bom</artifactId>
@@ -55,53 +33,60 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      <dependency>
-        <groupId>io.github.microutils</groupId>
-        <artifactId>kotlin-logging-jvm</artifactId>
-        <version>${kotlin-logging.version}</version>
-        <exclusions>
-          <exclusion>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib</artifactId>
-          </exclusion>
-        </exclusions>
-      </dependency>
-
-      <dependency>
-        <groupId>com.nhaarman.mockitokotlin2</groupId>
-        <artifactId>mockito-kotlin</artifactId>
-        <version>${mockito-kotlin.version}</version>
-        <scope>test</scope>
-      </dependency>
     </dependencies>
   </dependencyManagement>
 
   <dependencies>
-
-    <!-- Nullable / NotNull -->
     <dependency>
-      <groupId>org.jetbrains</groupId>
-      <artifactId>annotations</artifactId>
-      <version>18.0.0</version>
-    </dependency>
-
-
-    <!-- Testing -->
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-core</artifactId>
-      <scope>test</scope>
+      <groupId>com.tngtech.jgiven</groupId>
+      <artifactId>jgiven-core</artifactId>
+      <version>${jgiven.version}</version>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.assertj</groupId>
-      <artifactId>assertj-core</artifactId>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-stdlib-jdk8</artifactId>
+      <version>${kotlin.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-test</artifactId>
+      <version>${kotlin.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
 
+  <repositories>
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>bintray.kotlin.eap</id>
+      <name>Bintray Kotlin EAP Repository</name>
+      <url>https://dl.bintray.com/kotlin/kotlin-eap</url>
+    </repository>
+  </repositories>
+
   <build>
     <defaultGoal>clean jacoco:prepare-agent package</defaultGoal>
+
+    <sourceDirectory>src/main/kotlin</sourceDirectory>
+    <testSourceDirectory>src/test/kotlin</testSourceDirectory>
+
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <excludes>
+          <exclude>.gitkeep</exclude>
+        </excludes>
+      </resource>
+    </resources>
 
     <pluginManagement>
       <plugins>
@@ -141,14 +126,12 @@
           <configuration>
             <jvmTarget>${java.version}</jvmTarget>
             <compilerPlugins>
-              <plugin>spring</plugin>
-              <plugin>jpa</plugin>
               <plugin>no-arg</plugin>
               <plugin>all-open</plugin>
             </compilerPlugins>
             <pluginOptions>
               <!-- Each annotation is placed on its own line -->
-              <option>all-open:annotation=com.tngtech.jgiven.integration.spring.JGivenStage</option>
+              <option>all-open:annotation=io.toolisticon.testing.jgiven.JGivenKotlinStage</option>
             </pluginOptions>
           </configuration>
           <executions>
@@ -160,7 +143,6 @@
               <configuration>
                 <sourceDirs>
                   <sourceDir>${project.basedir}/src/main/kotlin</sourceDir>
-                  <sourceDir>${project.basedir}/src/main/java</sourceDir>
                 </sourceDirs>
               </configuration>
             </execution>
@@ -172,7 +154,6 @@
               <configuration>
                 <sourceDirs>
                   <sourceDir>${project.basedir}/src/test/kotlin</sourceDir>
-                  <sourceDir>${project.basedir}/src/test/java</sourceDir>
                 </sourceDirs>
               </configuration>
             </execution>
@@ -234,7 +215,7 @@
           <!-- resources -->
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.2.0</version>
           <configuration>
             <encoding>${project.build.sourceEncoding}</encoding>
           </configuration>
@@ -248,10 +229,6 @@
             <useSystemClassLoader>false</useSystemClassLoader>
             <shutdown>kill</shutdown>
             <runOrder>random</runOrder>
-            <excludes>
-              <exclude>${pattern.class.itest}</exclude>
-              <exclude>${pattern.package.itest}</exclude>
-            </excludes>
             <!-- Sets the VM argument line used when unit tests are run. -->
             <!-- prevent the annoying ForkedBooter process from stealing window focus on Mac OS -->
             <argLine>-Djava.awt.headless=true ${argLine} -XX:+StartAttachListener -Xmx1024m -XX:MaxPermSize=256m</argLine>
@@ -284,21 +261,19 @@
             </execution>
           </executions>
           <configuration>
-            <skip>${dokka.skip}</skip>
             <includes>
               <include>${project.basedir}/src/main/kotlin/packages.md</include>
             </includes>
             <sourceLinks>
               <link>
                 <path>${project.basedir}</path>
-                <url>https://github.com/holunda-io/camunda-bpm-data/blob/master</url>
+                <url>https://github.com/toolisticon/jgiven-kotlin/blob/master</url>
                 <lineSuffix>#L</lineSuffix>
               </link>
             </sourceLinks>
             <jdkVersion>11</jdkVersion>
             <sourceDirectories>
               <dir>${project.basedir}/src/main/kotlin</dir>
-              <dir>${project.basedir}/src/main/java</dir>
             </sourceDirectories>
           </configuration>
         </plugin>
@@ -459,6 +434,30 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
       </plugin>
+      <plugin>
+        <groupId>org.jetbrains.kotlin</groupId>
+        <artifactId>kotlin-maven-plugin</artifactId>
+        <version>${kotlin.version}</version>
+        <executions>
+          <execution>
+            <id>compile</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>test-compile</id>
+            <phase>test-compile</phase>
+            <goals>
+              <goal>test-compile</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <jvmTarget>1.8</jvmTarget>
+        </configuration>
+      </plugin>
     </plugins>
 
   </build>
@@ -557,6 +556,17 @@
       <releases>
         <enabled>true</enabled>
       </releases>
+    </pluginRepository>
+    <pluginRepository>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>bintray.kotlin.eap</id>
+      <name>Bintray Kotlin EAP Repository</name>
+      <url>https://dl.bintray.com/kotlin/kotlin-eap</url>
     </pluginRepository>
   </pluginRepositories>
 
