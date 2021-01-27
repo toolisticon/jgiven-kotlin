@@ -275,9 +275,6 @@
             </execution>
           </executions>
           <configuration>
-            <includes>
-              <include>${project.basedir}/src/main/kotlin/packages.md</include>
-            </includes>
             <sourceLinks>
               <link>
                 <path>${project.basedir}</path>
