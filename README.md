@@ -6,6 +6,8 @@ Extensions that make working with the JVM BDD testing tool [jgiven](https://jgiv
 
 [![sponsored](https://img.shields.io/badge/sponsoredBy-Holisticon-RED.svg)](https://holisticon.de/)
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.holunda.data/camunda-bpm-data/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.holunda.data/camunda-bpm-data)
+
 ## Features
 
 ### GIVEN,WHEN,THEN
