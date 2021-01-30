@@ -6,6 +6,19 @@ Extensions that make working with the JVM BDD testing tool [jgiven](https://jgiv
 [![sponsored](https://img.shields.io/badge/sponsoredBy-Holisticon-RED.svg)](https://holisticon.de/)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.toolisticon.testing/jgiven-kotlin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.toolisticon.testing/jgiven-kotlin)
 
+## Usage 
+
+### Maven
+```
+<dependendcy>
+  <groupId>io.toolisticon.testing</groupId>
+  <artifactId>jgiven-kotlin</artifactId>
+  <version>0.1.0</version>
+  <scope>test</scope>  
+</dependendcy>
+
+```
+
 ## Features
 
 ### GIVEN,WHEN,THEN
@@ -71,7 +84,7 @@ Since all classes and functions are final by default in kotlin, you have to expl
 
 Using the `JGivenKotlinStage` annotation and kotlin's "all-open" compiler plugin, this can be avoided.
 
-#### gradle
+#### Gradle
 
 ```kotlin
 plugins {
@@ -85,7 +98,7 @@ allOpen {
 }
 ```
 
-#### maven
+#### Maven
 
 ```xml
 
