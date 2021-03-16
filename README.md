@@ -10,12 +10,12 @@ Extensions that make working with the JVM BDD testing tool [jgiven](https://jgiv
 
 ### Maven
 ```
-<dependendcy>
+<dependency>
   <groupId>io.toolisticon.testing</groupId>
   <artifactId>jgiven-kotlin</artifactId>
   <version>0.1.0</version>
   <scope>test</scope>  
-</dependendcy>
+</dependency>
 
 ```
 
