@@ -47,7 +47,6 @@
     <dependency>
       <groupId>org.jetbrains.kotlin</groupId>
       <artifactId>kotlin-stdlib-jdk8</artifactId>
-      <version>${kotlin.version}</version>
       <scope>provided</scope>
     </dependency>
 
@@ -288,6 +287,7 @@
             </sourceDirectories>
           </configuration>
         </plugin>
+
         <!-- Source from kotlin -->
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -356,7 +356,6 @@
           <artifactId>maven-gpg-plugin</artifactId>
           <version>1.6</version>
           <configuration>
-            <keyname>${gpg.keyname}</keyname>
             <gpgArguments>
               <arg>--batch</arg>
               <arg>--yes</arg>
@@ -428,11 +427,15 @@
                   <requireMavenVersion>
                     <version>3.6.0</version>
                   </requireMavenVersion>
+                  <requireJavaVersion>
+                    <version>11</version>
+                  </requireJavaVersion>
                 </rules>
               </configuration>
             </execution>
           </executions>
         </plugin>
+
       </plugins>
     </pluginManagement>
 
