@@ -4,7 +4,7 @@
 
   <groupId>io.toolisticon.testing</groupId>
   <artifactId>jgiven-kotlin</artifactId>
-  <version>0.1.0</version>
+  <version>1.0.0</version>
 
   <name>${project.artifactId}</name>
   <description>jgiven kotlin extension</description>
@@ -16,10 +16,10 @@
     <java.version>11</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <kotlin.version>1.4.21</kotlin.version>
+    <kotlin.version>1.4.32</kotlin.version>
     <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
 
-    <jgiven.version>1.0.0-RC7</jgiven.version>
+    <jgiven.version>1.0.0</jgiven.version>
     <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
 
   </properties>
@@ -47,7 +47,6 @@
     <dependency>
       <groupId>org.jetbrains.kotlin</groupId>
       <artifactId>kotlin-stdlib-jdk8</artifactId>
-      <version>${kotlin.version}</version>
       <scope>provided</scope>
     </dependency>
 
@@ -263,7 +262,7 @@
         <plugin>
           <groupId>org.jetbrains.dokka</groupId>
           <artifactId>dokka-maven-plugin</artifactId>
-          <version>1.4.20</version>
+          <version>1.4.30</version>
           <executions>
             <execution>
               <id>attach-javadocs</id>
@@ -288,6 +287,7 @@
             </sourceDirectories>
           </configuration>
         </plugin>
+
         <!-- Source from kotlin -->
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -332,7 +332,7 @@
         <plugin>
           <groupId>com.amashchenko.maven.plugin</groupId>
           <artifactId>gitflow-maven-plugin</artifactId>
-          <version>1.15.1</version>
+          <version>1.16.0</version>
           <configuration>
             <gitFlowConfig>
               <productionBranch>master</productionBranch>
@@ -356,7 +356,6 @@
           <artifactId>maven-gpg-plugin</artifactId>
           <version>1.6</version>
           <configuration>
-            <keyname>${gpg.keyname}</keyname>
             <gpgArguments>
               <arg>--batch</arg>
               <arg>--yes</arg>
@@ -428,11 +427,15 @@
                   <requireMavenVersion>
                     <version>3.6.0</version>
                   </requireMavenVersion>
+                  <requireJavaVersion>
+                    <version>11</version>
+                  </requireJavaVersion>
                 </rules>
               </configuration>
             </execution>
           </executions>
         </plugin>
+
       </plugins>
     </pluginManagement>
 
