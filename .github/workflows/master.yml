@@ -1,9 +1,10 @@
-name: Master branch
+name: Master or release candidate branch
 
 on:
   push:
     branches:
       - master
+      - 'release/*'
 jobs:
   build:
 
