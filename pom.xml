@@ -4,7 +4,7 @@
 
   <groupId>io.toolisticon.testing</groupId>
   <artifactId>jgiven-kotlin</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 
   <name>${project.artifactId}</name>
   <description>jgiven kotlin extension</description>
@@ -16,7 +16,7 @@
     <java.version>11</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <kotlin.version>1.4.32</kotlin.version>
+    <kotlin.version>1.5.10</kotlin.version>
     <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
 
     <jgiven.version>1.0.0</jgiven.version>
@@ -114,7 +114,7 @@
         <plugin>
           <groupId>org.jacoco</groupId>
           <artifactId>jacoco-maven-plugin</artifactId>
-          <version>0.8.6</version>
+          <version>0.8.7</version>
           <executions>
             <execution>
               <id>pre-unit-test</id>
@@ -262,7 +262,7 @@
         <plugin>
           <groupId>org.jetbrains.dokka</groupId>
           <artifactId>dokka-maven-plugin</artifactId>
-          <version>1.4.30</version>
+          <version>1.4.32</version>
           <executions>
             <execution>
               <id>attach-javadocs</id>
@@ -354,7 +354,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-gpg-plugin</artifactId>
-          <version>1.6</version>
+          <version>3.0.1</version>
           <configuration>
             <gpgArguments>
               <arg>--batch</arg>
