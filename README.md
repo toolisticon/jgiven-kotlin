@@ -1,5 +1,7 @@
 # jgiven-kotlin
 
+[![stable](https://img.shields.io/badge/lifecycle-STABLE-green.svg)](https://github.com/toolisticon#stable)
+
 Extensions that make working with the JVM BDD testing tool [jgiven](https://jgiven.org) and Kotlin even more fun.
 
 [![Build Status](https://github.com/toolisticon/jgiven-kotlin/workflows/Development%20branches/badge.svg)](https://github.com/toolisticon/jgiven-kotlin/actions)
