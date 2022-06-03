@@ -1,9 +1,8 @@
 # jgiven-kotlin
 
-[![stable](https://img.shields.io/badge/lifecycle-STABLE-green.svg)](https://github.com/toolisticon#stable)
-
 Extensions that make working with the JVM BDD testing tool [jgiven](https://jgiven.org) and Kotlin even more fun.
 
+[![stable](https://img.shields.io/badge/lifecycle-STABLE-green.svg)](https://github.com/toolisticon#stable)
 [![Build Status](https://github.com/toolisticon/jgiven-kotlin/workflows/Development%20branches/badge.svg)](https://github.com/toolisticon/jgiven-kotlin/actions)
 [![sponsored](https://img.shields.io/badge/sponsoredBy-Holisticon-red.svg)](https://holisticon.de/)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.toolisticon.testing/jgiven-kotlin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.toolisticon.testing/jgiven-kotlin)
@@ -15,7 +14,7 @@ Extensions that make working with the JVM BDD testing tool [jgiven](https://jgiv
 <dependency>
   <groupId>io.toolisticon.testing</groupId>
   <artifactId>jgiven-kotlin</artifactId>
-  <version>1.2.0</version>
+  <version>1.2.2</version>
   <scope>test</scope>  
 </dependency>
 
