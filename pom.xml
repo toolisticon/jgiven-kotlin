@@ -19,7 +19,7 @@
     <kotlin.version>1.6.21</kotlin.version>
     <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
 
-    <jgiven.version>1.2.1</jgiven.version>
+    <jgiven.version>1.2.2</jgiven.version>
     <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
 
   </properties>
