@@ -4,7 +4,7 @@
 
   <groupId>io.toolisticon.testing</groupId>
   <artifactId>jgiven-kotlin</artifactId>
-  <version>1.2.1</version>
+  <version>1.2.2</version>
 
   <name>${project.artifactId}</name>
   <description>jgiven kotlin extension</description>
@@ -19,7 +19,7 @@
     <kotlin.version>1.6.21</kotlin.version>
     <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
 
-    <jgiven.version>1.2.1</jgiven.version>
+    <jgiven.version>1.2.2</jgiven.version>
     <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
 
   </properties>
