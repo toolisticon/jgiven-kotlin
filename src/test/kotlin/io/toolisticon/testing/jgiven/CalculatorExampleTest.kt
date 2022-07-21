@@ -4,6 +4,7 @@ import com.tngtech.jgiven.Stage
 import com.tngtech.jgiven.annotation.ScenarioState
 import com.tngtech.jgiven.annotation.ScenarioState.Resolution.NAME
 import com.tngtech.jgiven.junit5.SimpleScenarioTest
+import io.toolisticon.testing.jgiven.format.VarargsQuoted
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
@@ -25,6 +26,18 @@ internal class CalculatorExampleTest : SimpleScenarioTest<CalculatorStage>() {
     THEN
       .`the sum is $`(11)
   }
+
+  @Test
+  fun `calculator adds two numbers as varargs`() {
+    GIVEN
+      .`numbers are $`(5, 4)
+
+    WHEN
+      .`both numbers are added`()
+
+    THEN
+      .`the sum is $`(9)
+  }
 }
 
 @JGivenKotlinStage
@@ -38,6 +51,14 @@ class CalculatorStage : Stage<CalculatorStage>() {
 
   @ScenarioState(resolution = NAME)
   var sum: Int = 0
+
+  /**
+   * Sets both numbers via vararg, use to verify Vararg formatter.
+   */
+  fun `numbers are $`(@VarargsQuoted vararg nums: Int) = step {
+    require(nums.size == 2) { "need to pass two numbers" }
+    `the first number is $`(nums[0]).`the second number is $`(nums[1])
+  }
 
   fun `the first number is $`(n: Int) = step {
     this.firstNumber = n
