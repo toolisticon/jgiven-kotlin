@@ -10,10 +10,10 @@ import kotlin.test.assertEquals
 /**
  * Simple example using GIVEN/WHEN/THEN extensions, the step() lambda and the all open annotation.
  */
-class CalculatorExampleTest : SimpleScenarioTest<CalculatorStage>() {
+internal class CalculatorExampleTest : SimpleScenarioTest<CalculatorStage>() {
 
   @Test
-  internal fun `calculator adds two numbers`() {
+  fun `calculator adds two numbers`() {
     GIVEN
       .`the first number is $`(4)
       .AND
