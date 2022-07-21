@@ -4,7 +4,7 @@
 
   <groupId>io.toolisticon.testing</groupId>
   <artifactId>jgiven-kotlin</artifactId>
-  <version>1.2.3-SNAPSHOT</version>
+  <version>1.2.2.0-SNAPSHOT</version>
 
   <name>${project.artifactId}</name>
   <description>jgiven kotlin extension</description>
