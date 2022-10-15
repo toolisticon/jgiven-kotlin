@@ -4,26 +4,29 @@
 
   <groupId>io.toolisticon.testing</groupId>
   <artifactId>jgiven-kotlin</artifactId>
-  <version>1.2.2.2-SNAPSHOT</version>
+  <version>1.2.3.0-SNAPSHOT</version>
 
   <name>${project.artifactId}</name>
   <description>jgiven kotlin extension</description>
   <url>https://github.com/toolisticon/jgiven-kotlin/</url>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>11</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <kotlin.version>1.7.20</kotlin.version>
     <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
 
-    <jgiven.version>1.2.2</jgiven.version>
-    <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
+    <jgiven.version>1.2.3</jgiven.version>
+    <spring-boot.version>2.7.4</spring-boot.version>
 
     <!-- TEST -->
     <assertj.version>3.23.1</assertj.version>
+
+    <!-- MAVEN -->
+    <project.encoding>UTF-8</project.encoding>
+    <project.build.sourceEncoding>${project.encoding}</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>${project.encoding}</project.reporting.outputEncoding>
   </properties>
 
   <dependencyManagement>
@@ -80,20 +83,6 @@
     </dependency>
 
   </dependencies>
-
-  <repositories>
-    <repository>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>bintray.kotlin.eap</id>
-      <name>Bintray Kotlin EAP Repository</name>
-      <url>https://dl.bintray.com/kotlin/kotlin-eap</url>
-    </repository>
-  </repositories>
 
   <build>
     <defaultGoal>clean jacoco:prepare-agent package</defaultGoal>
