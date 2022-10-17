@@ -4,26 +4,29 @@
 
   <groupId>io.toolisticon.testing</groupId>
   <artifactId>jgiven-kotlin</artifactId>
-  <version>1.2.2.1</version>
+  <version>1.2.3.0</version>
 
   <name>${project.artifactId}</name>
   <description>jgiven kotlin extension</description>
   <url>https://github.com/toolisticon/jgiven-kotlin/</url>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>11</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <kotlin.version>1.7.10</kotlin.version>
+    <kotlin.version>1.7.20</kotlin.version>
     <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
 
-    <jgiven.version>1.2.2</jgiven.version>
-    <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
+    <jgiven.version>1.2.3</jgiven.version>
+    <spring-boot.version>2.7.4</spring-boot.version>
 
     <!-- TEST -->
     <assertj.version>3.23.1</assertj.version>
+
+    <!-- MAVEN -->
+    <project.encoding>UTF-8</project.encoding>
+    <project.build.sourceEncoding>${project.encoding}</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>${project.encoding}</project.reporting.outputEncoding>
   </properties>
 
   <dependencyManagement>
@@ -75,25 +78,11 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
-      <version>1.7.36</version>
+      <version>2.0.3</version>
       <scope>test</scope>
     </dependency>
 
   </dependencies>
-
-  <repositories>
-    <repository>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>bintray.kotlin.eap</id>
-      <name>Bintray Kotlin EAP Repository</name>
-      <url>https://dl.bintray.com/kotlin/kotlin-eap</url>
-    </repository>
-  </repositories>
 
   <build>
     <defaultGoal>clean jacoco:prepare-agent package</defaultGoal>
@@ -237,7 +226,7 @@
           <!-- resources -->
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.2.0</version>
+          <version>3.3.0</version>
           <configuration>
             <encoding>${project.build.sourceEncoding}</encoding>
           </configuration>
@@ -271,7 +260,7 @@
         <plugin>
           <groupId>org.jetbrains.dokka</groupId>
           <artifactId>dokka-maven-plugin</artifactId>
-          <version>1.7.10</version>
+          <version>1.7.20</version>
           <executions>
             <execution>
               <id>attach-javadocs</id>
@@ -341,7 +330,7 @@
         <plugin>
           <groupId>com.amashchenko.maven.plugin</groupId>
           <artifactId>gitflow-maven-plugin</artifactId>
-          <version>1.18.0</version>
+          <version>1.19.0</version>
           <configuration>
             <gitFlowConfig>
               <productionBranch>master</productionBranch>
@@ -417,7 +406,7 @@
         <!-- Install -->
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>3.0.1</version>
         </plugin>
 
         <!-- Enforce -->
