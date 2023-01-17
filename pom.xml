@@ -21,7 +21,7 @@
     <spring-boot.version>2.7.5</spring-boot.version>
 
     <!-- TEST -->
-    <assertj.version>3.24.1</assertj.version>
+    <assertj.version>3.24.2</assertj.version>
 
     <!-- MAVEN -->
     <project.encoding>UTF-8</project.encoding>
