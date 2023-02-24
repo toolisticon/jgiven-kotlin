@@ -4,7 +4,7 @@
 
   <groupId>io.toolisticon.testing</groupId>
   <artifactId>jgiven-kotlin</artifactId>
-  <version>1.2.4.0</version>
+  <version>1.2.5.0</version>
 
   <name>${project.artifactId}</name>
   <description>jgiven kotlin extension</description>
@@ -14,14 +14,14 @@
     <java.version>11</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <kotlin.version>1.7.20</kotlin.version>
+    <kotlin.version>1.8.10</kotlin.version>
     <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
 
-    <jgiven.version>1.2.4</jgiven.version>
-    <spring-boot.version>2.7.5</spring-boot.version>
+    <jgiven.version>1.2.5</jgiven.version>
+    <spring-boot.version>2.7.8</spring-boot.version>
 
     <!-- TEST -->
-    <assertj.version>3.23.1</assertj.version>
+    <assertj.version>3.24.2</assertj.version>
 
     <!-- MAVEN -->
     <project.encoding>UTF-8</project.encoding>
@@ -78,7 +78,7 @@
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <version>1.4.4</version>
+      <version>1.4.5</version>
       <scope>test</scope>
     </dependency>
 
@@ -375,7 +375,7 @@
         <!-- Deploy -->
         <plugin>
           <artifactId>maven-deploy-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>3.1.0</version>
           <configuration>
             <skip>true</skip>
           </configuration>
@@ -406,14 +406,14 @@
         <!-- Install -->
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
-          <version>3.0.1</version>
+          <version>3.1.0</version>
         </plugin>
 
         <!-- Enforce -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.2.1</version>
           <executions>
             <execution>
               <id>enforce-maven</id>
