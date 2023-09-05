@@ -72,6 +72,6 @@ internal class VarargsFormatterTest {
     }
   }
 
-  private fun varargInt(vararg v: Int): Any? = v as Any?
-  private fun varargBoolean(vararg v: Boolean?): Any? = v as Any?
+  private fun varargInt(vararg v: Int): Any? = v
+  private fun varargBoolean(vararg v: Boolean?): Any? = v
 }
