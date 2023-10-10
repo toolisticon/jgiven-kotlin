@@ -28,7 +28,6 @@
   <properties>
     <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
     <jgiven.version>1.3.0</jgiven.version>
-    <spring-boot.version>2.7.15</spring-boot.version>
 
     <!-- TEST -->
     <assertj.version>3.24.2</assertj.version>
