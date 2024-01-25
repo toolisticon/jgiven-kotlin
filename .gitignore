@@ -18,7 +18,6 @@ _tmp
 .project
 .settings/
 .meta-data/
-.java-version
 .DS_Store
 
 # java mem
