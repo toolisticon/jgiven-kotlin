@@ -30,7 +30,7 @@
     <jgiven.version>1.3.0</jgiven.version>
 
     <!-- TEST -->
-    <assertj.version>3.24.2</assertj.version>
+    <assertj.version>3.25.2</assertj.version>
   </properties>
 
   <dependencyManagement>
