@@ -6,6 +6,7 @@ Extensions that make working with the JVM BDD testing tool [jgiven](https://jgiv
 [![Build Status](https://github.com/toolisticon/jgiven-kotlin/workflows/Development%20branches/badge.svg)](https://github.com/toolisticon/jgiven-kotlin/actions)
 [![sponsored](https://img.shields.io/badge/sponsoredBy-Holisticon-red.svg)](https://holisticon.de/)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.toolisticon.testing/jgiven-kotlin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.toolisticon.testing/jgiven-kotlin)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftoolisticon%2Fjgiven-kotlin.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftoolisticon%2Fjgiven-kotlin?ref=badge_shield)
 
 ## Usage 
 
@@ -131,3 +132,7 @@ allOpen {
 * These helpers where moved from [jgiven-addons](https://github.com/toolisticon/jgiven-addons) for better separation of concerns and
   simplified publishing.
 * This extension might become obsolete once jgiven [supports this officially](https://github.com/TNG/JGiven/pull/407).
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftoolisticon%2Fjgiven-kotlin.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftoolisticon%2Fjgiven-kotlin?ref=badge_large)
