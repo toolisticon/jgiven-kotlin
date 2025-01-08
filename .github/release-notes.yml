@@ -1,14 +1,14 @@
 changelog:
   sections:
     - title: ":rocket: Enhancements & Features"
-      labels: [ "Type: enhancement", "Type: documentation", "Type: example" ]
+      labels: [ "enhancement", "documentation", "example" ]
     - title: ":bug: Bug Fixes"
-      labels: [ "Type: bug" ]
+      labels: [ "bug" ]
     - title: ":hammer_and_wrench: Chore"
-      labels: [ "Type: dependencies" ]
+      labels: [ "dependencies" ]
   issues:
     exclude:
-      labels: [ "Type: Incorrect Repository", "Type: question" ]
+      labels: [ "question" ]
   contributors:
     exclude:
       names: [ "dependabot[bot]", "codacy-badger" ]
