@@ -15,7 +15,7 @@ Extensions that make working with the JVM BDD testing tool [JGiven](https://jgiv
 <dependency>
   <groupId>io.toolisticon.testing</groupId>
   <artifactId>jgiven-kotlin</artifactId>
-  <version>2.0.1.0</version>
+  <version>2.0.2.0</version>
   <scope>test</scope>  
 </dependency>
 
