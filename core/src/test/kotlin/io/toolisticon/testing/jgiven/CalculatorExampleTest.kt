@@ -28,6 +28,23 @@ internal class CalculatorExampleTest : SimpleScenarioTest<CalculatorStage>() {
   }
 
   @Test
+  fun `calculator adds two numbers - receiver style`() {
+    GIVEN {
+      `the first number is $`(4)
+      AND
+      `the second number is $`(7)
+    }
+
+    WHEN {
+      `both numbers are added`()
+    }
+
+    THEN {
+      `the sum is $`(11)
+    }
+  }
+
+  @Test
   fun `calculator adds two numbers as varargs`() {
     GIVEN
       .`numbers are $`(5, 4)
