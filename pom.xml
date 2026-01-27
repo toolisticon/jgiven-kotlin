@@ -28,9 +28,6 @@
   <properties>
     <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
     <jgiven.version>2.0.3</jgiven.version>
-
-    <!-- TEST -->
-    <assertj.version>3.27.6</assertj.version>
   </properties>
 
   <dependencyManagement>
